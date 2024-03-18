@@ -1,6 +1,7 @@
-FROM amazoncorretto:17
+FROM amazoncorretto:21
 WORKDIR /my-project
-CMD ["./gradlew", "clean", "bootJar"]
+COPY . .
+RUN ./gradlew clean bootJar
 COPY build/libs/*.jar app.jar
 
 EXPOSE 8080
