@@ -15,13 +15,15 @@ pipeline {
         stage('Build') { 
             steps { 
                 script{
-                 app = docker.build("springboot-activemq")
+                 //app = docker.build("springboot-activemq")
+                 sh './gradlew clean bootJar'
                 }
             }
         }
         stage('Test'){
             steps {
-                 echo 'Empty'
+                // Run Gradle tests
+                sh './gradlew clean test --no-daemon'
             }
         }
         stage('Deploy') {
