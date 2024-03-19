@@ -23,9 +23,4 @@ public class StoreMessageProducer {
         jmsTemplate.convertAndSend(destination, store);
         log.info("Producer> Message Sent");
     }
-
-    public int add(int a, int b) {
-        return a + b;
-    }
-
 }
