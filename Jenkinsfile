@@ -26,5 +26,10 @@ pipeline {
                 sh './gradlew clean test --no-daemon'
             }
         }
+        stage('SonarQube Analysis') {
+            withSonarQubeEnv() {
+            sh "./gradlew sonar"
+            }
+        }
     }
 }

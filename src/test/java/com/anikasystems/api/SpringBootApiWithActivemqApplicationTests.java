@@ -25,7 +25,7 @@ class SpringBootApiWithActivemqApplicationTests {
 	@Test
 	void testMultiply() {
 		SpringBootApiWithActivemqApplication app = new SpringBootApiWithActivemqApplication();
-		assert(app.multiply(1, 2) == 3);
+		assert(app.multiply(1, 2) == 2);
 	}
 
 	@Test
